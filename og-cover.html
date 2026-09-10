@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Angles — social cover</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    background:#0a0e14;
+    color:#d7e0ea;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Roboto Mono",monospace;
+    position:relative;
+  }
+  /* grid */
+  .grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right, rgba(31,40,49,.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(31,40,49,.55) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+  /* accent bar */
+  .bar{position:absolute;left:0;top:0;width:7px;height:100%;
+    background:linear-gradient(180deg,#37f09a,#1aa66b)}
+  /* glow */
+  .glow{position:absolute;left:-140px;top:-140px;width:620px;height:620px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(55,240,154,.13), transparent 68%)}
+
+  .inner{position:relative;padding:70px 80px;height:100%;
+    display:flex;flex-direction:column;justify-content:center}
+
+  .brand{display:flex;align-items:baseline;gap:22px}
+  .mark{font-size:96px;line-height:1;font-weight:700;color:#37f09a}
+  .name{font-size:92px;line-height:1;font-weight:800;letter-spacing:-1px;color:#fff}
+
+  .tag{margin-top:34px;font-size:31px;color:#7c8b9a;letter-spacing:.2px}
+  .tag2{margin-top:12px;font-size:24px;color:#5d6b7a}
+
+  .pills{margin-top:46px;display:flex;gap:16px;flex-wrap:wrap}
+  .pill{
+    border:1.5px solid #1f2831;border-radius:999px;
+    padding:10px 24px;color:#37f09a;font-size:23px;
+  }
+
+  .foot{
+    margin-top:34px;border-top:1px solid #1f2831;padding-top:24px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:25px;
+  }
+  .foot .l{color:#37f09a}
+  .foot .r{color:#7c8b9a}
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="bar"></div>
+
+  <div class="inner">
+    <div class="brand">
+      <span class="mark">&#945;</span>
+      <span class="name">Angles</span>
+    </div>
+
+    <div class="tag">MIT-licensed AI coding agent</div>
+    <div class="tag2">1.6 MB single static binary &middot; zero runtime dependencies</div>
+
+    <div class="pills">
+      <span class="pill">Linux</span>
+      <span class="pill">macOS</span>
+      <span class="pill">Windows</span>
+      <span class="pill">ARM64</span>
+      <span class="pill">x64</span>
+    </div>
+
+    <div class="foot">
+      <span class="l">angleschina.github.io</span>
+      <span class="r">github.com/angleschina</span>
+    </div>
+  </div>
+</body>
+</html>
