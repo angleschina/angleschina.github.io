@@ -79,9 +79,25 @@
   .pull{color:var(--dim);letter-spacing:2px;font-size:12px}
   .starcount{color:var(--dim);font-size:12px}
 
+  /* sponsor */
+  .sponsor{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;
+    border:1px solid var(--line);border-radius:14px;padding:28px;
+    background:linear-gradient(180deg,var(--panel2),var(--panel))}
+  .sponsor h3{color:#fff;font-size:20px;margin-bottom:4px}
+  .sponsor p{color:var(--dim);font-size:14px;margin-top:10px;
+    font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.75}
+  .sponsor p b{color:var(--acc)}
+  .qr{background:#fff;border-radius:14px;padding:12px;width:224px;flex:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .qr img{display:block;width:200px;height:200px;border-radius:6px}
+  .qr figcaption{color:#5a6472;font-size:12px;text-align:center;padding-top:9px;
+    font-family:ui-sans-serif,system-ui,-apple-system,sans-serif}
+
   @media(max-width:640px){
     .navlinks{font-size:12px;gap:12px}
     .sub{max-width:100%}
+    .sponsor{grid-template-columns:1fr;gap:22px}
+    .qr{margin:0 auto}
   }
 </style>
 </head>
@@ -94,6 +110,7 @@
       <a href="#projects">projects</a>
       <a href="#about">about</a>
       <a href="#start">get angles</a>
+      <a href="#donate">sponsor</a>
       <a href="https://github.com/angleschina">GitHub&nearr;</a>
     </nav>
   </div>
@@ -159,6 +176,24 @@
       <div class="tile"><b>30+ TOOLS</b><span>文件、目录、终端、Git、网络、搜索——工具全在本机，模型只在需要时才出境。</span></div>
       <div class="tile"><b>11 PROVIDERS</b><span>OpenAI、agnès 及更多，随时切换。key 只住 ~/.angles/，绝不过任何中转服务器。</span></div>
       <div class="tile"><b>LOCAL-FIRST</b><span>配置与密钥都留在你的机器。Angles 帮你编码，但不带走你的秘密。</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="donate">
+  <div class="wrap">
+    <div class="sec"><span class="idx">03</span><h2>Sponsor</h2></div>
+    <div class="sponsor">
+      <div>
+        <h3>MIT 开源，没有 Pro 墙</h3>
+        <p>Angles 的每一行代码都公开，免费使用、修改、商用，没有付费版。如果它帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。</p>
+        <p><b>支付宝</b>：打开 App → 扫一扫 → 扫码，任意金额，¥1 也是心意。</p>
+        <p>⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。</p>
+      </div>
+      <figure class="qr">
+        <img src="assets/alipay-qr.png" alt="支付宝赞赏码" width="200" height="200">
+        <figcaption>打开支付宝扫一扫</figcaption>
+      </figure>
     </div>
   </div>
 </section>
