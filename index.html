@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,219 +24,392 @@
 <meta name="twitter:description" content="MIT 开源。单文件静态二进制，零运行时依赖，全平台。">
 <meta name="twitter:image" content="https://angleschina.github.io/assets/og-cover.png">
 
-<meta name="theme-color" content="#0a0e14">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0e14'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%2337f09a' font-family='monospace'%3E%CE%B1%3C/text%3E%3C/svg%3E">
-<style>
-  :root{
-    --bg:#0a0e14; --panel:#11161f; --panel2:#0f141b;
-    --fg:#d7e0ea; --dim:#7c8b9a;
-    --acc:#37f09a; --acc-dim:#1aa66b; --line:#1f2831;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--fg);
-    font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Roboto Mono", monospace;
-    line-height:1.6;}
-  a{color:var(--acc);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
-
-  /* nav */
-  header{position:sticky;top:0;z-index:5;
-    background:color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
-  .nav{display:flex;align-items:center;gap:22px;height:56px;}
-  .brand{font-weight:700;letter-spacing:.5px;color:#fff}
-  .brand .dot{color:var(--acc)}
-  .navlinks{margin-left:auto;display:flex;gap:18px;font-size:13px}
-  .navlinks a{color:var(--dim)}
-  .navlinks a:hover{color:var(--fg)}
-
-  /* hero */
-  .hero{padding:84px 0 64px;border-bottom:1px dashed var(--line)}
-  .kicker{color:var(--acc);font-size:13px;letter-spacing:3px}
-  h1{font-size:clamp(34px,7vw,58px);line-height:1.1;
-     color:#fff;margin:16px 0 8px;font-weight:800}
-  h1 .grn{color:var(--acc)}
-  .sub{color:var(--dim);font-size:clamp(15px,2.4vw,19px);max-width:620px}
-  .cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px}
-  .btn.primary{background:var(--acc);color:#06281a}
-  .btn.ghost{border:1px solid var(--line);color:var(--fg)}
-  .btn.ghost:hover{background:var(--panel2)}
-
-  /* install */
-  .code{background:#0c1118;border:1px solid var(--line);border-radius:10px;
-    padding:14px 18px;overflow-x:auto;margin-top:8px;font-size:14px}
-  .code .cm{color:var(--dim)}
-  .code .pr{color:#e0b26a}
-
-  /* section heading */
-  .sec{margin:64px 0 26px;display:flex;align-items:baseline;gap:12px}
-  .sec h2{color:#fff;font-size:24px}
-  .sec .idx{color:var(--acc);font-size:13px}
-
-  /* cards */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
-    padding:20px;transition:transform .15s ease, border-color .15s ease}
-  .card:hover{transform:translateY(-3px);border-color:var(--acc-dim)}
-  .card h3{margin:8px 0 6px;font-size:17px;color:#fff}
-  .card .meta{display:flex;gap:12px;color:var(--dim);font-size:12px;margin-bottom:10px}
-  .card p{color:var(--dim);font-size:14px;min-height:44px}
-  .card a.more{font-size:13px}
-
-  /* about / philosophy */
-  .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
-  .tile{border:1px solid var(--line);border-radius:12px;padding:20px;background:
-    linear-gradient(180deg,var(--panel2),var(--panel))}
-  .tile b{color:var(--acc);display:block;margin-bottom:8px;font-size:13px;
-    letter-spacing:1px}
-  .tile span{display:block;color:var(--dim);font-size:14px}
-
-  footer{border-top:1px solid var(--line);margin-top:80px;padding:28px 0 48px;
-    color:var(--dim);font-size:13px}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-  .pull{color:var(--dim);letter-spacing:2px;font-size:12px}
-  .starcount{color:var(--dim);font-size:12px}
-
-  /* sponsor */
-  .sponsor{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;
-    border:1px solid var(--line);border-radius:14px;padding:28px;
-    background:linear-gradient(180deg,var(--panel2),var(--panel))}
-  .sponsor h3{color:#fff;font-size:20px;margin-bottom:4px}
-  .sponsor p{color:var(--dim);font-size:14px;margin-top:10px;
-    font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.75}
-  .sponsor p b{color:var(--acc)}
-  .qr{background:#fff;border-radius:14px;padding:12px;width:224px;flex:none;
-    box-shadow:0 10px 30px rgba(0,0,0,.35)}
-  .qr img{display:block;width:200px;height:200px;border-radius:6px}
-  .qr figcaption{color:#5a6472;font-size:12px;text-align:center;padding-top:9px;
-    font-family:ui-sans-serif,system-ui,-apple-system,sans-serif}
-
-  @media(max-width:640px){
-    .navlinks{font-size:12px;gap:12px}
-    .sub{max-width:100%}
-    .sponsor{grid-template-columns:1fr;gap:22px}
-    .qr{margin:0 auto}
-  }
-</style>
+<meta name="theme-color" content="#0066FF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230066FF'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23fff' font-family='monospace'%3E%CE%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <div class="brand">angles<span class="dot">.</span></div>
-    <nav class="navlinks">
-      <a href="#projects">projects</a>
-      <a href="#about">about</a>
-      <a href="#start">get angles</a>
-      <a href="#donate">sponsor</a>
-      <a href="https://github.com/angleschina">GitHub&nearr;</a>
+<!-- 顶栏 -->
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="/">
+      <span class="logo-mark">α</span>
+      <span class="logo-text">
+        <span class="site-title">Angles</span>
+        <span class="site-url">angleschina.github.io</span>
+      </span>
+    </a>
+
+    <nav class="nav">
+      <a class="nav-link" href="#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
+      <a class="nav-link" href="#download"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+      <a class="nav-link" href="https://angleschina.github.io/angles-cli/docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+      <a class="nav-link" href="#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
+      <a class="nav-link" href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
     </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <button class="lang-btn" id="lang-btn" aria-label="切换语言">中文</button>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="kicker">ANGLESCHINA · TERMINAL AGENTIC CODING</div>
-    <h1>2MB agent.<br><span class="grn">2GB powers.</span></h1>
-    <p class="sub">Angles Code CLI — 一只静态的、单二进制的 Rust 编码 agent。
-    没有 Node、没有运行时、没有编译器。装一条命令就开始。
-    30+ 工具驱动文件·目录·终端·Git·网页，11 家模型供应商任你切换。</p>
-    <div class="cta">
-      <a class="btn primary" href="https://github.com/angleschina/angles-cli" id="cta-cli">try angles-cli &nearr;</a>
-      <a class="btn ghost" href="#start">how to start</a>
-    </div>
-  </div>
-</section>
+<main>
 
-<section id="start">
-  <div class="wrap">
-    <div class="sec"><span class="idx">00</span><h2>Get Angles</h2></div>
-    <div class="code">
-      <span class="cm"># the whole agent, one static binary. config lives in ~/.angles/</span><br>
-      <span class="pr">$</span> curl -fsSL https://get.angles.dev/install | sh<br>
-      <span class="pr">$</span> angles chat<span class="cm">   &nbsp;# → start coding</span><br>
-      <span class="pr">$</span> angles serve -p 8801<span class="cm">  # → local HTTP gateway (API + web console)</span>
-    </div>
-  </div>
-</section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1><span class="gradient-text">Angles</span></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">单文件静态二进制的 AI 编码 Agent —— 零运行时依赖，多平台预编译，MIT 开源。</p>
+        <div class="hero-version">
+          <span class="version-item"><span class="label" data-i18n="hero.version">最新版本</span> <span class="version" id="ver">v0.6.3</span></span>
+          <span class="divider">|</span>
+          <span class="date-item"><span class="label" data-i18n="hero.size">体积</span> <span class="version">1.6 MB</span></span>
+        </div>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#download" data-i18n="hero.cta">立即下载</a>
+          <a class="btn btn-outline" href="https://angleschina.github.io/angles-cli/docs.html" data-i18n="hero.doc">查看文档</a>
+        </div>
+      </div>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="sec"><span class="idx">01</span><h2>Projects in the angle</h2></div>
-    <div class="cards">
-      <div class="card">
-        <div class="meta"><span>angles-cli</span><span class="pull">★ <b data-repo="angles-cli">–</b></span></div>
-        <h3>Angles Code CLI</h3>
-        <p>terminal agentic coding assistant,compiled to one 2MB static Rust binary。</p>
-        <a class="more" href="https://github.com/angleschina/angles-cli">view repo &nearr;</a>
-      </div>
-      <div class="card">
-        <div class="meta"><span>angles-skills</span><span class="pull">★ <b data-repo="angles-skills">–</b></span></div>
-        <h3>Skills Collection</h3>
-        <p>PDF / Word / PPT / Excel / image / reports —— 常用办公文档能力的 skill 清单，随装随用。</p>
-        <a class="more" href="https://github.com/angleschina/angles-skills">view repo &nearr;</a>
-      </div>
-      <div class="card">
-        <div class="meta"><span>awesome-angles</span><span class="pull">★ <b data-repo="awesome-angles">–</b></span></div>
-        <h3>Awesome Angles</h3>
-        <p>curated list of awesome angles-cli tools、skills 与资源。</p>
-        <a class="more" href="https://github.com/angleschina/awesome-angles">view repo &nearr;</a>
+      <div class="hero-image">
+        <div class="term">
+          <div class="term-bar">
+            <span class="term-dot r"></span>
+            <span class="term-dot y"></span>
+            <span class="term-dot g"></span>
+            <span class="term-title">angles — bash</span>
+          </div>
+          <div class="term-body"><span class="pr">$</span> npm i -g @angleschina/angles &amp;&amp; angles install
+<span class="ok">✓</span> downloaded angles 1.6 MB
+<span class="ok">✓</span> verified checksum
+<span class="ok">✓</span> installed → ~/.local/bin/angles
+
+<span class="pr">$</span> angles chat
+<span class="cm"># 30+ 内置工具 · 11 家模型供应商 · 配置存于 ~/.angles/</span>
+<span class="out">›</span> 帮我重构 src/ 下的错误处理
+
+<span class="pr">$</span> angles serve -p 8801
+<span class="cm"># → 本地 HTTP 网关（API + Web 控制台）</span></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <div class="wrap">
-    <div class="sec"><span class="idx">02</span><h2>Why &ldquo;2MB with 2GB powers&rdquo;</h2></div>
-    <div class="about">
-      <div class="tile"><b>NO RUNTIME</b><span>纯粹单二进制。Rust 静态编译，不依附 Node / Py / 编译器，装上就能干活。</span></div>
-      <div class="tile"><b>30+ TOOLS</b><span>文件、目录、终端、Git、网络、搜索——工具全在本机，模型只在需要时才出境。</span></div>
-      <div class="tile"><b>11 PROVIDERS</b><span>OpenAI、agnès 及更多，随时切换。key 只住 ~/.angles/，绝不过任何中转服务器。</span></div>
-      <div class="tile"><b>LOCAL-FIRST</b><span>配置与密钥都留在你的机器。Angles 帮你编码，但不带走你的秘密。</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="donate">
-  <div class="wrap">
-    <div class="sec"><span class="idx">03</span><h2>Sponsor</h2></div>
-    <div class="sponsor">
-      <div>
-        <h3>MIT 开源，没有 Pro 墙</h3>
-        <p>Angles 的每一行代码都公开，免费使用、修改、商用，没有付费版。如果它帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。</p>
-        <p><b>支付宝</b>：打开 App → 扫一扫 → 扫码，任意金额，¥1 也是心意。</p>
-        <p>⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。</p>
+  <!-- 功能 -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="features.title">核心特性</h2>
+        <p data-i18n="features.sub">够用的能力，极简的分发</p>
       </div>
-      <figure class="qr">
-        <img src="assets/alipay-qr.png" alt="支付宝赞赏码" width="200" height="200">
-        <figcaption>打开支付宝扫一扫</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="wrap">
-    <span>angles / angleschina<span class="starcount"></span></span>
-    <span class="pull" aria-hidden="true">made with 2MB</span>
-    <a href="https://github.com/angleschina" style="margin-left:auto">angleschina · GitHub</a>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3 data-i18n="f1.title">单文件分发</h3>
+          <p data-i18n="f1.desc">1.6 MB 静态二进制，不含 Node / Python / 动态库。下载一个文件、chmod +x 就能跑，SBC、容器、无 root 环境都行。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">🧩</div>
+          <h3 data-i18n="f2.title">30+ 内置工具</h3>
+          <p data-i18n="f2.desc">文件、目录、终端、Git、网络六大类工具全在本机执行，模型只在需要时才出境。不做一次性 shell 拼接。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">🤖</div>
+          <h3 data-i18n="f3.title">11 家模型供应商</h3>
+          <p data-i18n="f3.desc">OpenAI、Claude、Gemini、DeepSeek、Grok、Qwen、GLM、Kimi……随时切换。密钥只留在 ~/.angles/，不过任何中转服务器。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon orange">📋</div>
+          <h3 data-i18n="f4.title">先出计划再动手</h3>
+          <p data-i18n="f4.desc">每次执行前列出高层操作步骤（读取…安装…创建…编辑…运行…），你能提前看到它准备做什么，再决定放不放行。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon cyan">🌐</div>
+          <h3 data-i18n="f5.title">联网搜索与抓取</h3>
+          <p data-i18n="f5.desc">内置聚合搜索接口，支持 site: / filetype: 限定与时间范围过滤；可抓取任意页面正文，交给模型阅读。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon red">🖥️</div>
+          <h3 data-i18n="f6.title">多平台预编译</h3>
+          <p data-i18n="f6.desc">Linux ARM64/x64、macOS ARM64/x64、Windows x64 五个平台的二进制由 CI 在每次打 tag 时自动产出。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安装 -->
+  <section class="section alt" id="download">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="install.title">快速开始</h2>
+        <p data-i18n="install.sub">几分钟就能跑起来</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3 data-i18n="s1.title">安装</h3>
+            <p data-i18n="s1.desc">通过 npm 安装，或直接从 Releases 下载对应平台的压缩包。</p>
+            <p style="margin-top:10px"><code>npm i -g @angleschina/angles</code></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3 data-i18n="s2.title">配置模型</h3>
+            <p data-i18n="s2.desc">写入 API 密钥与模型名，配置保存在本地 <code>~/.angles/</code>。</p>
+            <p style="margin-top:10px"><code>angles config</code></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3 data-i18n="s3.title">开始编码</h3>
+            <p data-i18n="s3.desc">交互式对话，或非交互式执行单条指令后退出。</p>
+            <p style="margin-top:10px"><code>angles chat</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目 -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="proj.title">仓库</h2>
+        <p data-i18n="proj.sub">angleschina 组织下的开源项目</p>
+      </div>
+
+      <div class="repo-list">
+        <a class="repo" href="https://github.com/angleschina/angles-cli">
+          <span class="repo-name">angles-cli</span>
+          <span class="repo-desc" data-i18n="r1.desc">终端 agentic 编码助手，编译成单个静态 Rust 二进制</span>
+          <span class="repo-star">★ <b data-repo="angles-cli">–</b></span>
+        </a>
+        <a class="repo" href="https://github.com/angleschina/angles-skills">
+          <span class="repo-name">angles-skills</span>
+          <span class="repo-desc" data-i18n="r2.desc">PDF / Word / PPT / Excel / 图片等常用文档能力的 Skill 集合</span>
+          <span class="repo-star">★ <b data-repo="angles-skills">–</b></span>
+        </a>
+        <a class="repo" href="https://github.com/angleschina/awesome-angles">
+          <span class="repo-name">awesome-angles</span>
+          <span class="repo-desc" data-i18n="r3.desc">angles-cli 生态资源精选清单</span>
+          <span class="repo-star">★ <b data-repo="awesome-angles">–</b></span>
+        </a>
+        <a class="repo" href="https://github.com/angleschina/angles-desktop">
+          <span class="repo-name">angles-desktop</span>
+          <span class="repo-desc" data-i18n="r4.desc">Win11 风格的 WinUI 3 桌面外壳</span>
+          <span class="repo-star">★ <b data-repo="angles-desktop">–</b></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 赞助 -->
+  <section class="section alt" id="donate">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="donate.title">赞助</h2>
+        <p data-i18n="donate.sub">MIT 开源，没有 Pro 墙</p>
+      </div>
+
+      <div class="donate-card">
+        <div>
+          <h3 data-i18n="donate.h3">所有代码都公开，免费使用、修改、商用</h3>
+          <p data-i18n="donate.p1">如果 Angles 帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。</p>
+          <p><span class="em" data-i18n="donate.em">支付宝</span><span data-i18n="donate.p2">：打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。</span></p>
+          <p data-i18n="donate.p3">⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。</p>
+        </div>
+        <figure class="qr">
+          <img src="assets/alipay-qr.png" alt="支付宝赞赏码" width="200" height="200">
+          <figcaption data-i18n="donate.qr">打开支付宝扫一扫</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/">
+          <span class="logo-mark">α</span>
+          <span class="site-title">Angles</span>
+        </a>
+        <p class="footer-description" data-i18n="footer.desc">单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。</p>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-i18n="footer.community">社区</h4>
+        <ul>
+          <li><a href="https://github.com/angleschina/angles-cli">🐙 GitHub 项目主页</a></li>
+          <li><a href="https://github.com/angleschina/angles-cli/issues">🐛 Issues（反馈 Bug / 提需求）</a></li>
+          <li><a href="https://github.com/angleschina/angles-cli/releases">📦 Releases（下载历史版本）</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-i18n="footer.contact">联系我们</h4>
+        <ul>
+          <li><a href="mailto:jhamakercc@gmail.com">📧 jhamakercc@gmail.com</a></li>
+          <li><a href="https://www.npmjs.com/package/@angleschina/angles">📦 npm 包页面</a></li>
+          <li><a href="#donate">❤️ 赞助支持</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © <span id="year">2026</span> Angles · <a href="https://github.com/angleschina/angles-cli/blob/main/LICENSE">MIT License</a></p>
+      <p data-i18n="footer.powered">静态站点托管于 GitHub Pages</p>
+    </div>
   </div>
 </footer>
 
 <script>
-  // 渐进增强：从 GitHub API 拉取各仓库 star 数填充于卡内
-  const repos = ['angles-cli','angles-skills','awesome-angles'];
-  repos.forEach(r => {
-    fetch('https://api.github.com/repos/angleschina/'+r)
-      .then(x=>x.json())
-      .then(j=>{const el=document.querySelector(`[data-repo="${r}"]`);
-         if(el&&j.stargazers_count!=null)el.textContent=j.stargazers_count;})
-      .catch(()=>{});
+// ── 年份 ──
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── 主题切换 ──
+const root = document.documentElement;
+const themeBtn = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('angles-theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+setTheme(initialTheme);
+
+function setTheme(t) {
+  root.setAttribute('data-theme', t);
+  themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('angles-theme', t);
+}
+themeBtn.addEventListener('click', () => {
+  setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+// ── 语言切换 ──
+const I18N = {
+  zh: {
+    'nav.features': '功能', 'nav.download': '下载', 'nav.docs': '文档', 'nav.donate': '赞助',
+    'hero.subtitle': '单文件静态二进制的 AI 编码 Agent —— 零运行时依赖，多平台预编译，MIT 开源。',
+    'hero.version': '最新版本', 'hero.size': '体积',
+    'hero.cta': '立即下载', 'hero.doc': '查看文档',
+    'features.title': '核心特性', 'features.sub': '够用的能力，极简的分发',
+    'f1.title': '单文件分发',
+    'f1.desc': '1.6 MB 静态二进制，不含 Node / Python / 动态库。下载一个文件、chmod +x 就能跑，SBC、容器、无 root 环境都行。',
+    'f2.title': '30+ 内置工具',
+    'f2.desc': '文件、目录、终端、Git、网络六大类工具全在本机执行，模型只在需要时才出境。不做一次性 shell 拼接。',
+    'f3.title': '11 家模型供应商',
+    'f3.desc': 'OpenAI、Claude、Gemini、DeepSeek、Grok、Qwen、GLM、Kimi……随时切换。密钥只留在 ~/.angles/，不过任何中转服务器。',
+    'f4.title': '先出计划再动手',
+    'f4.desc': '每次执行前列出高层操作步骤（读取…安装…创建…编辑…运行…），你能提前看到它准备做什么，再决定放不放行。',
+    'f5.title': '联网搜索与抓取',
+    'f5.desc': '内置聚合搜索接口，支持 site: / filetype: 限定与时间范围过滤；可抓取任意页面正文，交给模型阅读。',
+    'f6.title': '多平台预编译',
+    'f6.desc': 'Linux ARM64/x64、macOS ARM64/x64、Windows x64 五个平台的二进制由 CI 在每次打 tag 时自动产出。',
+    'install.title': '快速开始', 'install.sub': '几分钟就能跑起来',
+    's1.title': '安装', 's1.desc': '通过 npm 安装，或直接从 Releases 下载对应平台的压缩包。',
+    's2.title': '配置模型', 's2.desc': '写入 API 密钥与模型名，配置保存在本地',
+    's3.title': '开始编码', 's3.desc': '交互式对话，或非交互式执行单条指令后退出。',
+    'proj.title': '仓库', 'proj.sub': 'angleschina 组织下的开源项目',
+    'r1.desc': '终端 agentic 编码助手，编译成单个静态 Rust 二进制',
+    'r2.desc': 'PDF / Word / PPT / Excel / 图片等常用文档能力的 Skill 集合',
+    'r3.desc': 'angles-cli 生态资源精选清单',
+    'r4.desc': 'Win11 风格的 WinUI 3 桌面外壳',
+    'donate.title': '赞助', 'donate.sub': 'MIT 开源，没有 Pro 墙',
+    'donate.h3': '所有代码都公开，免费使用、修改、商用',
+    'donate.p1': '如果 Angles 帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。',
+    'donate.em': '支付宝', 'donate.p2': '：打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。',
+    'donate.p3': '⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。',
+    'donate.qr': '打开支付宝扫一扫',
+    'footer.desc': '单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。',
+    'footer.community': '社区', 'footer.contact': '联系我们', 'footer.powered': '静态站点托管于 GitHub Pages'
+  },
+  en: {
+    'nav.features': 'Features', 'nav.download': 'Download', 'nav.docs': 'Docs', 'nav.donate': 'Donate',
+    'hero.subtitle': 'A single static binary AI coding agent — zero runtime dependencies, prebuilt for every platform, MIT licensed.',
+    'hero.version': 'Latest', 'hero.size': 'Size',
+    'hero.cta': 'Download Now', 'hero.doc': 'Documentation',
+    'features.title': 'Core Features', 'features.sub': 'Powerful enough, minimal to ship',
+    'f1.title': 'Single-file distribution',
+    'f1.desc': 'A 1.6 MB static binary with no Node, Python, or shared libraries. Download one file, chmod +x, and it runs — on SBCs, in containers, without root.',
+    'f2.title': '30+ built-in tools',
+    'f2.desc': 'File, directory, terminal, Git and network tools all execute locally; the model only leaves your machine when it must. No improvised shell one-liners.',
+    'f3.title': '11 model providers',
+    'f3.desc': 'OpenAI, Claude, Gemini, DeepSeek, Grok, Qwen, GLM, Kimi and more, switchable at any time. Keys stay in ~/.angles/ and never touch a relay server.',
+    'f4.title': 'Plans before it acts',
+    'f4.desc': 'Before every execution it lists the high-level steps (read… install… create… edit… run…), so you can see what it is about to do and decide whether to allow it.',
+    'f5.title': 'Web search & fetch',
+    'f5.desc': 'Built-in aggregated search with site: / filetype: filters and time-range narrowing, plus readable full-page fetching for the model to read.',
+    'f6.title': 'Prebuilt everywhere',
+    'f6.desc': 'Binaries for Linux ARM64/x64, macOS ARM64/x64 and Windows x64 are produced automatically by CI on every tag.',
+    'install.title': 'Quick Installation', 'install.sub': 'Get started in minutes',
+    's1.title': 'Install', 's1.desc': 'Install via npm, or grab the archive for your platform from Releases.',
+    's2.title': 'Configure a model', 's2.desc': 'Set your API key and model name; config lives locally in',
+    's3.title': 'Start coding', 's3.desc': 'Chat interactively, or run a single instruction non-interactively and exit.',
+    'proj.title': 'Repositories', 'proj.sub': 'Open source projects under the angleschina org',
+    'r1.desc': 'Terminal agentic coding assistant, compiled into one static Rust binary',
+    'r2.desc': 'Skill collection for PDF / Word / PPT / Excel / image document tasks',
+    'r3.desc': 'Curated list of angles-cli ecosystem resources',
+    'r4.desc': 'Win11-style WinUI 3 desktop shell',
+    'donate.title': 'Donate', 'donate.sub': 'MIT licensed, no pro tier',
+    'donate.h3': 'All the code is public — free to use, modify and sell',
+    'donate.p1': 'If Angles saved you some time, you can buy me a coffee. It goes straight into CI runners, domains, model tokens and the next release.',
+    'donate.em': 'Alipay', 'donate.p2': ': open the app → Scan → scan the code. Any amount, ¥1 included.',
+    'donate.p3': '⭐ A star, an issue report or a bug fix is just as valuable as a donation.',
+    'donate.qr': 'Scan with Alipay',
+    'footer.desc': 'A single static binary AI coding agent. Built with Rust, zero runtime dependencies, supporting Linux / macOS / Windows on ARM64 and x64.',
+    'footer.community': 'COMMUNITY', 'footer.contact': 'CONTACT US', 'footer.powered': 'Static site hosted on GitHub Pages'
+  }
+};
+
+const langBtn = document.getElementById('lang-btn');
+let lang = localStorage.getItem('angles-lang') || (navigator.language.startsWith('zh') ? 'zh' : 'en');
+applyLang(lang);
+
+function applyLang(l) {
+  const dict = I18N[l];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) el.textContent = dict[key];
   });
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  langBtn.textContent = l === 'zh' ? '中文' : 'EN';
+  localStorage.setItem('angles-lang', l);
+}
+langBtn.addEventListener('click', () => {
+  lang = lang === 'zh' ? 'en' : 'zh';
+  applyLang(lang);
+});
+
+// ── 仓库 star 数 ──
+['angles-cli', 'angles-skills', 'awesome-angles', 'angles-desktop'].forEach(r => {
+  fetch('https://api.github.com/repos/angleschina/' + r)
+    .then(x => x.json())
+    .then(j => {
+      const el = document.querySelector('[data-repo="' + r + '"]');
+      if (el && j.stargazers_count != null) el.textContent = j.stargazers_count;
+    })
+    .catch(() => {});
+});
+
+// ── 最新版本号 ──
+fetch('https://api.github.com/repos/angleschina/angles-cli/releases/latest')
+  .then(x => x.json())
+  .then(j => {
+    if (j.tag_name) document.getElementById('ver').textContent = j.tag_name;
+  })
+  .catch(() => {});
 </script>
 </body>
 </html>
