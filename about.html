@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 — Angles</title>
+<meta name="description" content="关于 Angles：一个 MIT 开源的 AI 编码 Agent 项目，为什么做成单文件二进制。">
+<link rel="canonical" href="https://angleschina.github.io/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于 — Angles">
+<meta property="og:description" content="一个 MIT 开源的 AI 编码 Agent 项目。">
+<meta property="og:image" content="https://angleschina.github.io/assets/og-cover.png">
+<meta name="theme-color" content="#0066FF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230066FF'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23fff' font-family='monospace'%3E%CE%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">α</span>
+      <span class="logo-text">
+        <span class="site-title">Angles</span>
+        <span class="site-url">angleschina.github.io</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="index.html#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
+      <a class="nav-link" href="download.html"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+      <a class="nav-link" href="docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+      <a class="nav-link" href="about.html" style="color:var(--color-primary)"><span class="nav-icon">ℹ️</span><span data-i18n="nav.about">关于</span></a>
+      <a class="nav-link" href="index.html#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
+      <a class="nav-link" href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <button class="lang-btn" id="lang-btn" aria-label="切换语言">中文</button>
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
+  <a href="download.html"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+  <a href="docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+  <a href="about.html"><span class="nav-icon">ℹ️</span><span data-i18n="nav.about">关于</span></a>
+  <a href="index.html#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
+  <a href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container page-hero-inner">
+      <h1><span class="gradient-text" data-i18n="ab.h1">关于 Angles</span></h1>
+      <p data-i18n="ab.sub">一个 MIT 开源的编码 Agent 项目，把分发问题压缩成一个文件</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:44px">
+    <div class="container">
+
+      <!-- 数据 -->
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="num">1.6 MB</span>
+          <span class="lbl" data-i18n="ab.stat1">单文件体积</span>
+        </div>
+        <div class="stat">
+          <span class="num">30+</span>
+          <span class="lbl" data-i18n="ab.stat2">内置工具</span>
+        </div>
+        <div class="stat">
+          <span class="num">11</span>
+          <span class="lbl" data-i18n="ab.stat3">模型供应商</span>
+        </div>
+        <div class="stat">
+          <span class="num">5</span>
+          <span class="lbl" data-i18n="ab.stat4">预编译平台</span>
+        </div>
+        <div class="stat">
+          <span class="num">0</span>
+          <span class="lbl" data-i18n="ab.stat5">运行时依赖</span>
+        </div>
+        <div class="stat">
+          <span class="num">MIT</span>
+          <span class="lbl" data-i18n="ab.stat6">开源许可证</span>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2 data-i18n="ab.why">为什么要做成单个二进制</h2>
+        <p data-i18n="ab.why.p1">现在大多数 agentic 编码工具以 Node 或 Python 包的形式分发，会拉进成百上千个传递依赖，或者做成体积庞大的多层安装器。这在普通开发机上没问题——直到你想把它放到一台 ARM64 单板计算机、一个无 root 权限的容器里，或者 iOS 上的 iSH 环境里。</p>
+        <p data-i18n="ab.why.p2">Angles 编译成一个静态二进制，零运行时依赖。分发问题就塌缩成一句话："下载一个小于 2MB 的文件，然后 chmod +x"。</p>
+
+        <h2 data-i18n="ab.diff">和其他工具的区别</h2>
+        <ul>
+          <li data-i18n="ab.diff1">不依赖 Node / Python / 解释器，原生静态二进制直接运行</li>
+          <li data-i18n="ab.diff2">安装体积从几十 MB 加一棵依赖树，变成不超过 2 MB 的单个文件</li>
+          <li data-i18n="ab.diff3">不需要为了用而先装一整套工具链</li>
+          <li data-i18n="ab.diff4">在 ARM64 单板机、无 root 容器、iSH 里都能跑起来</li>
+        </ul>
+
+        <h2 data-i18n="ab.local">本地优先</h2>
+        <p data-i18n="ab.local.p">配置和 API 密钥都留在你自己的机器上（~/.angles/），请求直接从你的设备发往模型供应商。Angles 帮你写代码，但不会带走你的秘密。</p>
+
+        <h2 data-i18n="ab.plan">先给出计划再动手</h2>
+        <p data-i18n="ab.plan.p">从 v0.4.1 起，Angles 在执行前列出高层操作步骤（读取… 安装… 创建… 编辑… 运行…），让你在执行之前就知道它准备做什么，再决定是否放行。</p>
+
+        <h2 data-i18n="ab.license">许可证与贡献</h2>
+        <p data-i18n-html="ab.license.p">Angles 以 <a href="https://github.com/angleschina/angles-cli/blob/main/LICENSE">MIT 协议</a>开源，代码全部公开，免费使用、修改、商用，没有 Pro 版本，没有付费墙。</p>
+        <ul>
+          <li><a href="https://github.com/angleschina/angles-cli">angleschina/angles-cli</a> — 主仓库</li>
+          <li><a href="https://github.com/angleschina/awesome-angles">angleschina/awesome-angles</a> — 生态资源清单</li>
+          <li><a href="https://github.com/angleschina/angles-skills">angleschina/angles-skills</a> — Skill 集合</li>
+        </ul>
+
+        <h2 data-i18n="ab.contact">联系方式</h2>
+        <p data-i18n-html="ab.contact.p">有问题或建议，欢迎在 GitHub 上开 issue，或发邮件到 <a href="mailto:jhamakercc@gmail.com">jhamakercc@gmail.com</a>。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 赞助 -->
+  <section class="section alt" id="donate">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="donate.title">赞助</h2>
+        <p data-i18n="donate.sub">MIT 开源，没有 Pro 墙</p>
+      </div>
+      <div class="donate-card">
+        <div>
+          <h3 data-i18n="donate.h3">所有代码都公开，免费使用、修改、商用</h3>
+          <p data-i18n="donate.p1">如果 Angles 帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。</p>
+          <p><span class="em" data-i18n="donate.em">支付宝</span><span data-i18n="donate.p2">：打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。</span></p>
+          <p data-i18n="donate.p3">⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。</p>
+        </div>
+        <figure class="qr">
+          <img src="assets/alipay-qr.png" alt="支付宝赞赏码" width="200" height="200">
+          <figcaption data-i18n="donate.qr">打开支付宝扫一扫</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html">
+          <span class="logo-mark">α</span>
+          <span class="site-title">Angles</span>
+        </a>
+        <p class="footer-description" data-i18n="footer.desc">单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.community">社区</h4>
+        <ul>
+          <li><a href="https://github.com/angleschina/angles-cli">🐙 GitHub 项目主页</a></li>
+          <li><a href="https://github.com/angleschina/angles-cli/issues">🐛 Issues（反馈 Bug / 提需求）</a></li>
+          <li><a href="https://github.com/angleschina/angles-cli/releases">📦 Releases</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.contact">联系我们</h4>
+        <ul>
+          <li><a href="mailto:jhamakercc@gmail.com">📧 jhamakercc@gmail.com</a></li>
+          <li><a href="docs.html">📚 <span data-i18n="nav.docs">文档</span></a></li>
+          <li><a href="index.html#donate">❤️ <span data-i18n="nav.donate">赞助</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © <span id="year">2026</span> Angles · <a href="https://github.com/angleschina/angles-cli/blob/main/LICENSE">MIT License</a></p>
+      <p data-i18n="footer.powered">静态站点托管于 GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.ANGLES_I18N = {
+  zh: {
+    'nav.features': '功能', 'nav.download': '下载', 'nav.docs': '文档', 'nav.about': '关于', 'nav.donate': '赞助',
+    'ab.h1': '关于 Angles',
+    'ab.sub': '一个 MIT 开源的编码 Agent 项目，把分发问题压缩成一个文件',
+    'ab.stat1': '单文件体积', 'ab.stat2': '内置工具', 'ab.stat3': '模型供应商',
+    'ab.stat4': '预编译平台', 'ab.stat5': '运行时依赖', 'ab.stat6': '开源许可证',
+    'ab.why': '为什么要做成单个二进制',
+    'ab.why.p1': '现在大多数 agentic 编码工具以 Node 或 Python 包的形式分发，会拉进成百上千个传递依赖，或者做成体积庞大的多层安装器。这在普通开发机上没问题——直到你想把它放到一台 ARM64 单板计算机、一个无 root 权限的容器里，或者 iOS 上的 iSH 环境里。',
+    'ab.why.p2': 'Angles 编译成一个静态二进制，零运行时依赖。分发问题就塌缩成一句话：下载一个小于 2MB 的文件，然后 chmod +x。',
+    'ab.diff': '和其他工具的区别',
+    'ab.diff1': '不依赖 Node / Python / 解释器，原生静态二进制直接运行',
+    'ab.diff2': '安装体积从几十 MB 加一棵依赖树，变成不超过 2 MB 的单个文件',
+    'ab.diff3': '不需要为了用而先装一整套工具链',
+    'ab.diff4': '在 ARM64 单板机、无 root 容器、iSH 里都能跑起来',
+    'ab.local': '本地优先',
+    'ab.local.p': '配置和 API 密钥都留在你自己的机器上（~/.angles/），请求直接从你的设备发往模型供应商。Angles 帮你写代码，但不会带走你的秘密。',
+    'ab.plan': '先给出计划再动手',
+    'ab.plan.p': '从 v0.4.1 起，Angles 在执行前列出高层操作步骤（读取… 安装… 创建… 编辑… 运行…），让你在执行之前就知道它准备做什么，再决定是否放行。',
+    'ab.license': '许可证与贡献',
+    'ab.license.p': 'Angles 以 <a href="https://github.com/angleschina/angles-cli/blob/main/LICENSE">MIT 协议</a>开源，代码全部公开，免费使用、修改、商用，没有 Pro 版本，没有付费墙。',
+    'ab.contact': '联系方式',
+    'ab.contact.p': '有问题或建议，欢迎在 GitHub 上开 issue，或发邮件到 <a href="mailto:jhamakercc@gmail.com">jhamakercc@gmail.com</a>。',
+    'donate.title': '赞助', 'donate.sub': 'MIT 开源，没有 Pro 墙',
+    'donate.h3': '所有代码都公开，免费使用、修改、商用',
+    'donate.p1': '如果 Angles 帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。',
+    'donate.em': '支付宝', 'donate.p2': '：打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。',
+    'donate.p3': '⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。',
+    'donate.qr': '打开支付宝扫一扫',
+    'footer.desc': '单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。',
+    'footer.community': '社区', 'footer.contact': '联系我们', 'footer.powered': '静态站点托管于 GitHub Pages'
+  },
+  en: {
+    'nav.features': 'Features', 'nav.download': 'Download', 'nav.docs': 'Docs', 'nav.about': 'About', 'nav.donate': 'Donate',
+    'ab.h1': 'About Angles',
+    'ab.sub': 'An MIT-licensed coding agent project that collapses distribution into a single file',
+    'ab.stat1': 'binary size', 'ab.stat2': 'built-in tools', 'ab.stat3': 'model providers',
+    'ab.stat4': 'prebuilt platforms', 'ab.stat5': 'runtime deps', 'ab.stat6': 'license',
+    'ab.why': 'Why a single binary',
+    'ab.why.p1': 'Most agentic coding tools ship as Node or Python packages pulling hundreds of transitive dependencies, or as large multi-layer installers. That works on a normal dev machine — until you need to reach an ARM64 SBC, a rootless container, or iSH on iOS.',
+    'ab.why.p2': 'Angles compiles to one static binary with zero runtime dependencies. The distribution problem collapses to: download one file under 2 MB, then chmod +x.',
+    'ab.diff': 'How it differs',
+    'ab.diff1': 'No Node, Python or interpreter required — a native static binary',
+    'ab.diff2': 'Install footprint goes from tens of MB plus a dependency tree to a single file under 2 MB',
+    'ab.diff3': 'No toolchain needed just to use it',
+    'ab.diff4': 'Runs on ARM64 SBCs, rootless containers and inside iSH',
+    'ab.local': 'Local-first',
+    'ab.local.p': 'Configuration and API keys stay on your machine (~/.angles/). Requests go straight from your device to the model provider. Angles helps you code without taking your secrets with it.',
+    'ab.plan': 'Plans before it acts',
+    'ab.plan.p': 'Since v0.4.1, Angles lists high-level steps before executing (read… install… create… edit… run…), so you know what it is about to do before you allow it.',
+    'ab.license': 'License & contributing',
+    'ab.license.p': 'Angles is released under the <a href="https://github.com/angleschina/angles-cli/blob/main/LICENSE">MIT license</a>. All code is public — free to use, modify and sell. No Pro tier, no paywall.',
+    'ab.contact': 'Contact',
+    'ab.contact.p': 'Questions or suggestions? Open an issue on GitHub, or email <a href="mailto:jhamakercc@gmail.com">jhamakercc@gmail.com</a>.',
+    'donate.title': 'Donate', 'donate.sub': 'MIT licensed, no pro tier',
+    'donate.h3': 'All the code is public — free to use, modify and sell',
+    'donate.p1': 'If Angles saved you some time, you can buy me a coffee. It goes straight into CI runners, domains, model tokens and the next release.',
+    'donate.em': 'Alipay', 'donate.p2': ': open the app → Scan → scan the code. Any amount, ¥1 included.',
+    'donate.p3': '⭐ A star, an issue report or a bug fix is just as valuable as a donation.',
+    'donate.qr': 'Scan with Alipay',
+    'footer.desc': 'A single static binary AI coding agent. Built with Rust, zero runtime dependencies, supporting Linux / macOS / Windows on ARM64 and x64.',
+    'footer.community': 'COMMUNITY', 'footer.contact': 'CONTACT US', 'footer.powered': 'Static site hosted on GitHub Pages'
+  }
+};
+</script>
+<script src="app.js"></script>
+</body>
+</html>
