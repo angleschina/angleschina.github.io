@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>下载 — Angles Code CLI</title>
+<meta name="description" content="下载 Angles Code CLI：Linux / macOS / Windows 五个平台预编译二进制，也可通过 npm 安装。">
+<link rel="canonical" href="https://angleschina.github.io/download.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="下载 Angles Code CLI">
+<meta property="og:description" content="五个平台预编译二进制，零运行时依赖，MIT 开源。">
+<meta property="og:image" content="https://angleschina.github.io/assets/og-cover.png">
+<meta name="theme-color" content="#0066FF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230066FF'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23fff' font-family='monospace'%3E%CE%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">α</span>
+      <span class="logo-text">
+        <span class="site-title">Angles</span>
+        <span class="site-url">angleschina.github.io</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="index.html#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
+      <a class="nav-link" href="download.html" style="color:var(--color-primary)"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+      <a class="nav-link" href="docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+      <a class="nav-link" href="about.html"><span class="nav-icon">ℹ️</span><span data-i18n="nav.about">关于</span></a>
+      <a class="nav-link" href="index.html#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
+      <a class="nav-link" href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <button class="lang-btn" id="lang-btn" aria-label="切换语言">中文</button>
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
+  <a href="download.html"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+  <a href="docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+  <a href="about.html"><span class="nav-icon">ℹ️</span><span data-i18n="nav.about">关于</span></a>
+  <a href="index.html#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
+  <a href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
+</nav>
+
+<main>
+
+  <!-- 页头 -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container page-hero-inner">
+      <h1><span class="gradient-text" data-i18n="dl.h1">免费下载</span></h1>
+      <p data-i18n="dl.sub">获取 Angles Code CLI，开始在你的终端里用 AI 写代码</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+
+      <!-- 提示 -->
+      <div class="notice">
+        <span class="notice-icon">⚠️</span>
+        <div>
+          <p data-i18n="dl.notice1"><strong>请从官方渠道下载。</strong>Angles 只在 GitHub Releases 与 npm 发布，不会通过任何第三方应用商店分发。</p>
+          <p data-i18n="dl.notice2">若从其他来源获取安装包导致的问题，我们无法提供支持。</p>
+        </div>
+      </div>
+
+      <!-- 方式一：npm -->
+      <div class="pm-card">
+        <div class="pm-head">
+          <span style="font-size:24px">📦</span>
+          <h3 data-i18n="dl.npm.title">方式一：通过 npm 安装（推荐）</h3>
+        </div>
+        <p data-i18n="dl.npm.desc">全局安装后一条命令即可完成二进制下载、校验与安装，自动匹配你的平台架构。</p>
+        <div class="code-block"><span class="cm"># 全局安装</span>
+<span class="pr">$</span> <span class="cmd">npm i -g @angleschina/angles</span>
+
+<span class="cm"># 安装对应平台的二进制（自动识别系统与架构）</span>
+<span class="pr">$</span> <span class="cmd">angles install</span>
+<span class="ok">✓</span> installed → ~/.local/bin/angles
+
+<span class="cm"># 验证</span>
+<span class="pr">$</span> <span class="cmd">angles --version</span></div>
+        <p class="pm-note" data-i18n-html="dl.npm.note">npm 包名：<code>@angleschina/angles</code> · 也可用 <code>npx @angleschina/angles</code> 免安装运行。</p>
+      </div>
+
+      <!-- 方式二：直接下载 -->
+      <div class="dl-card">
+        <div class="dl-header">
+          <span class="dl-badge" data-version>v0.6.3</span>
+          <span class="dl-date"><span data-i18n="dl.released">发布日期</span>: <span data-release-date>—</span></span>
+          <a class="dl-changelog" href="https://github.com/angleschina/angles-cli/releases" data-i18n="dl.changelog">查看更新日志 →</a>
+        </div>
+        <h2 data-i18n="dl.bin.title">方式二：直接下载预编译二进制</h2>
+        <p class="dl-req" data-i18n="dl.bin.desc">五个平台的静态二进制，解压即用，无需安装任何运行时。以下为最新版本的全部产物。</p>
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="linux" role="tab">🐧 Linux</button>
+          <button class="tab" data-tab="macos" role="tab">🍎 macOS</button>
+          <button class="tab" data-tab="windows" role="tab">🪟 Windows</button>
+          <button class="tab" data-tab="source" role="tab">🔧 <span data-i18n="dl.tab.source">从源码构建</span></button>
+        </div>
+
+        <!-- Linux -->
+        <div class="tab-panel active" id="panel-linux">
+          <div class="dl-options">
+            <div class="dl-option">
+              <h3>Linux ARM64</h3>
+              <p data-i18n="dl.arm.desc">适用于 ARM64 服务器、树莓派、Apple Silicon 上的 Linux 虚拟机、iOS iSH 环境。</p>
+              <div class="file-row">
+                <span class="file-name">angles-linux-arm64.tar.gz</span>
+                <span class="file-size">~1.9 MB</span>
+              </div>
+              <div class="dl-buttons">
+                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-arm64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-arm64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
+              </div>
+            </div>
+
+            <div class="dl-option">
+              <h3>Linux x64</h3>
+              <p data-i18n="dl.x64.desc">适用于主流 x86_64 服务器与桌面发行版，musl 静态链接，不挑发行版。</p>
+              <div class="file-row">
+                <span class="file-name">angles-linux-x64.tar.gz</span>
+                <span class="file-size">~2.0 MB</span>
+              </div>
+              <div class="dl-buttons">
+                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-x64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-x64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- macOS -->
+        <div class="tab-panel" id="panel-macos">
+          <div class="dl-options">
+            <div class="dl-option">
+              <h3>macOS ARM64</h3>
+              <p data-i18n="dl.m1.desc">适用于 Apple Silicon（M 系列芯片）的 Mac，原生 arm64 二进制。</p>
+              <div class="file-row">
+                <span class="file-name">angles-macos-arm64.tar.gz</span>
+                <span class="file-size">~1.9 MB</span>
+              </div>
+              <div class="dl-buttons">
+                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-arm64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-arm64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
+              </div>
+            </div>
+
+            <div class="dl-option">
+              <h3>macOS x64</h3>
+              <p data-i18n="dl.intel.desc">适用于 Intel 芯片的 Mac。</p>
+              <div class="file-row">
+                <span class="file-name">angles-macos-x64.tar.gz</span>
+                <span class="file-size">~2.0 MB</span>
+              </div>
+              <div class="dl-buttons">
+                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-x64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-x64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
+              </div>
+            </div>
+          </div>
+          <p class="pm-note" data-i18n-html="dl.mac.note">首次运行若被 Gatekeeper 拦截，执行 <code>xattr -d com.apple.quarantine ./angles</code> 即可放行。</p>
+        </div>
+
+        <!-- Windows -->
+        <div class="tab-panel" id="panel-windows">
+          <div class="dl-options">
+            <div class="dl-option">
+              <h3>Windows x64</h3>
+              <p data-i18n="dl.win.desc">适用于 Windows 10 / 11，解压后可直接运行，或在 Windows Terminal 中使用。</p>
+              <div class="file-row">
+                <span class="file-name">angles-windows-x64.zip</span>
+                <span class="file-size">~2.1 MB</span>
+              </div>
+              <div class="dl-buttons">
+                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-windows-x64.zip" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-windows-x64.zip" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
+              </div>
+            </div>
+
+            <div class="dl-option">
+              <h3 data-i18n="dl.winpm.title">包管理器安装</h3>
+              <p data-i18n="dl.winpm.desc">已装 Node.js 的话，npm 是更省事的方式。</p>
+              <div class="code-block" style="font-size:.78rem;line-height:1.9"><span class="pr">&gt;</span> <span class="cmd">npm i -g @angleschina/angles</span>
+<span class="pr">&gt;</span> <span class="cmd">angles install</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 源码 -->
+        <div class="tab-panel" id="panel-source">
+          <p class="dl-req" data-i18n="dl.src.desc">需要 Rust 工具链（stable 即可）。仓库根目录提供 Makefile 与 Cross.toml，可直接交叉编译。</p>
+          <div class="code-block"><span class="cm"># 克隆与构建</span>
+<span class="pr">$</span> <span class="cmd">git clone https://github.com/angleschina/angles-cli.git</span>
+<span class="pr">$</span> <span class="cmd">cd angles-cli</span>
+<span class="pr">$</span> <span class="cmd">cargo build --release</span>
+
+<span class="cm"># 安装</span>
+<span class="pr">$</span> <span class="cmd">cp target/release/angles ~/.local/bin/</span>
+
+<span class="cm"># 交叉编译（需先 make setup-*）</span>
+<span class="pr">$</span> <span class="cmd">make arm64</span>        <span class="cm"># Linux ARM64</span>
+<span class="pr">$</span> <span class="cmd">make x64</span>          <span class="cm"># Linux x64</span>
+<span class="pr">$</span> <span class="cmd">make macos-arm64</span>  <span class="cm"># macOS ARM64（仅 macOS）</span></div>
+        </div>
+      </div>
+
+      <!-- 安装指南 -->
+      <div class="pm-card">
+        <div class="pm-head">
+          <span style="font-size:24px">🧭</span>
+          <h3 data-i18n="dl.guide.title">安装指南</h3>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="guide-num">1</div>
+            <div>
+              <h4 data-i18n="dl.g1.title">选择安装方式</h4>
+              <p data-i18n-html="dl.g1.desc">有 Node 环境就用 <code>npm</code>；没有就用预编译二进制，解压后 <code>tar xzf angles-*.tar.gz</code> 得到一个可执行文件。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">2</div>
+            <div>
+              <h4 data-i18n="dl.g2.title">放到 PATH 里</h4>
+              <p data-i18n-html="dl.g2.desc">把二进制移到 <code>~/.local/bin/</code> 或 <code>/usr/local/bin/</code>，然后 <code>chmod +x angles</code>。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">3</div>
+            <div>
+              <h4 data-i18n="dl.g3.title">配置模型供应商</h4>
+              <p data-i18n-html="dl.g3.desc">运行 <code>angles config</code> 写入 API 密钥与模型名，配置保存在 <code>~/.angles/config.json</code>。也可用 <code>angles gateway</code> 走交互式向导。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">4</div>
+            <div>
+              <h4 data-i18n="dl.g4.title">开始使用</h4>
+              <p data-i18n-html="dl.g4.desc"><code>angles chat</code> 进入交互式对话；<code>angles exec "指令"</code> 非交互式执行单条指令；<code>angles serve -p 8801</code> 启动本地 HTTP 网关与控制台。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 全部版本 -->
+      <div class="pm-card">
+        <div class="pm-head">
+          <span style="font-size:24px">🗂️</span>
+          <h3 data-i18n="dl.history.title">历史版本与校验</h3>
+        </div>
+        <p data-i18n="dl.history.desc">所有历史版本、每个平台的产物与校验信息都在 GitHub Releases 页面，包含 CI 自动生成的构建说明。</p>
+        <div class="dl-buttons" style="flex-direction:row;flex-wrap:wrap;gap:12px;margin-top:4px">
+          <a class="btn-dl primary" style="flex:0 0 auto;padding:11px 22px" href="https://github.com/angleschina/angles-cli/releases">📦 <span data-i18n="dl.allreleases">查看全部 Releases</span></a>
+          <a class="btn-dl" style="flex:0 0 auto;padding:11px 22px" href="https://www.npmjs.com/package/@angleschina/angles">📦 <span data-i18n="dl.npmpage">npm 包页面</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html">
+          <span class="logo-mark">α</span>
+          <span class="site-title">Angles</span>
+        </a>
+        <p class="footer-description" data-i18n="footer.desc">单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.community">社区</h4>
+        <ul>
+          <li><a href="https://github.com/angleschina/angles-cli">🐙 GitHub 项目主页</a></li>
+          <li><a href="https://github.com/angleschina/angles-cli/issues">🐛 Issues（反馈 Bug / 提需求）</a></li>
+          <li><a href="https://github.com/angleschina/angles-cli/releases">📦 Releases</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.contact">联系我们</h4>
+        <ul>
+          <li><a href="mailto:jhamakercc@gmail.com">📧 jhamakercc@gmail.com</a></li>
+          <li><a href="docs.html">📚 <span data-i18n="nav.docs">文档</span></a></li>
+          <li><a href="index.html#donate">❤️ <span data-i18n="nav.donate">赞助</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © <span id="year">2026</span> Angles · <a href="https://github.com/angleschina/angles-cli/blob/main/LICENSE">MIT License</a></p>
+      <p data-i18n="footer.powered">静态站点托管于 GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.ANGLES_I18N = {
+  zh: {
+    'nav.features': '功能', 'nav.download': '下载', 'nav.docs': '文档', 'nav.about': '关于', 'nav.donate': '赞助',
+    'dl.h1': '免费下载',
+    'dl.sub': '获取 Angles Code CLI，开始在你的终端里用 AI 写代码',
+    'dl.notice1': '请从官方渠道下载。Angles 只在 GitHub Releases 与 npm 发布，不会通过任何第三方应用商店分发。',
+    'dl.notice2': '若从其他来源获取安装包导致的问题，我们无法提供支持。',
+    'dl.npm.title': '方式一：通过 npm 安装（推荐）',
+    'dl.npm.desc': '全局安装后一条命令即可完成二进制下载、校验与安装，自动匹配你的平台架构。',
+    'dl.npm.note': 'npm 包名：<code>@angleschina/angles</code> · 也可用 <code>npx @angleschina/angles</code> 免安装运行。',
+    'dl.released': '发布日期', 'dl.changelog': '查看更新日志 →',
+    'dl.bin.title': '方式二：直接下载预编译二进制',
+    'dl.bin.desc': '五个平台的静态二进制，解压即用，无需安装任何运行时。以下为最新版本的全部产物。',
+    'dl.tab.source': '从源码构建',
+    'dl.arm.desc': '适用于 ARM64 服务器、树莓派、Apple Silicon 上的 Linux 虚拟机、iOS iSH 环境。',
+    'dl.x64.desc': '适用于主流 x86_64 服务器与桌面发行版，musl 静态链接，不挑发行版。',
+    'dl.m1.desc': '适用于 Apple Silicon（M 系列芯片）的 Mac，原生 arm64 二进制。',
+    'dl.intel.desc': '适用于 Intel 芯片的 Mac。',
+    'dl.win.desc': '适用于 Windows 10 / 11，解压后可直接运行，或在 Windows Terminal 中使用。',
+    'dl.winpm.title': '包管理器安装',
+    'dl.winpm.desc': '已装 Node.js 的话，npm 是更省事的方式。',
+    'dl.mac.note': '首次运行若被 Gatekeeper 拦截，执行 <code>xattr -d com.apple.quarantine ./angles</code> 即可放行。',
+    'dl.src.desc': '需要 Rust 工具链（stable 即可）。仓库根目录提供 Makefile 与 Cross.toml，可直接交叉编译。',
+    'dl.from.github': '从 GitHub 下载', 'dl.from.ghfast': '从 ghfast 加速下载',
+    'dl.guide.title': '安装指南',
+    'dl.g1.title': '选择安装方式',
+    'dl.g1.desc': '有 Node 环境就用 <code>npm</code>；没有就用预编译二进制，解压后 <code>tar xzf angles-*.tar.gz</code> 得到一个可执行文件。',
+    'dl.g2.title': '放到 PATH 里',
+    'dl.g2.desc': '把二进制移到 <code>~/.local/bin/</code> 或 <code>/usr/local/bin/</code>，然后 <code>chmod +x angles</code>。',
+    'dl.g3.title': '配置模型供应商',
+    'dl.g3.desc': '运行 <code>angles config</code> 写入 API 密钥与模型名，配置保存在 <code>~/.angles/config.json</code>。也可用 <code>angles gateway</code> 走交互式向导。',
+    'dl.g4.title': '开始使用',
+    'dl.g4.desc': '<code>angles chat</code> 进入交互式对话；<code>angles exec "指令"</code> 非交互式执行单条指令；<code>angles serve -p 8801</code> 启动本地 HTTP 网关与控制台。',
+    'dl.history.title': '历史版本与校验',
+    'dl.history.desc': '所有历史版本、每个平台的产物与校验信息都在 GitHub Releases 页面，包含 CI 自动生成的构建说明。',
+    'dl.allreleases': '查看全部 Releases', 'dl.npmpage': 'npm 包页面',
+    'footer.desc': '单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。',
+    'footer.community': '社区', 'footer.contact': '联系我们', 'footer.powered': '静态站点托管于 GitHub Pages'
+  },
+  en: {
+    'nav.features': 'Features', 'nav.download': 'Download', 'nav.docs': 'Docs', 'nav.about': 'About', 'nav.donate': 'Donate',
+    'dl.h1': 'Free Download',
+    'dl.sub': 'Get Angles Code CLI and start writing code with AI in your terminal',
+    'dl.notice1': 'Please download from official channels. Angles is published only on GitHub Releases and npm — never through third-party app stores.',
+    'dl.notice2': 'Issues caused by packages from other sources cannot be supported.',
+    'dl.npm.title': 'Option 1: Install via npm (recommended)',
+    'dl.npm.desc': 'One command downloads, verifies and installs the binary matching your platform and architecture.',
+    'dl.npm.note': 'Package name: <code>@angleschina/angles</code> · or run without installing via <code>npx @angleschina/angles</code>.',
+    'dl.released': 'Released', 'dl.changelog': 'View changelog →',
+    'dl.bin.title': 'Option 2: Download a prebuilt binary',
+    'dl.bin.desc': 'Static binaries for five platforms — unpack and run, no runtime required. All artifacts of the latest release below.',
+    'dl.tab.source': 'Build from source',
+    'dl.arm.desc': 'For ARM64 servers, Raspberry Pi, Linux VMs on Apple Silicon, and iOS iSH environments.',
+    'dl.x64.desc': 'For mainstream x86_64 servers and desktop distros; statically linked against musl, distro-agnostic.',
+    'dl.m1.desc': 'For Apple Silicon Macs (M-series), native arm64 binary.',
+    'dl.intel.desc': 'For Intel-based Macs.',
+    'dl.win.desc': 'For Windows 10 / 11 — unzip and run, or use it inside Windows Terminal.',
+    'dl.winpm.title': 'Install via package manager',
+    'dl.winpm.desc': 'If you already have Node.js, npm is the easier route.',
+    'dl.mac.note': 'If Gatekeeper blocks the first run, clear the quarantine flag with <code>xattr -d com.apple.quarantine ./angles</code>.',
+    'dl.src.desc': 'Requires a Rust toolchain (stable is fine). The repo ships a Makefile and Cross.toml for cross-compilation.',
+    'dl.from.github': 'Download from GitHub', 'dl.from.ghfast': 'Download via ghfast mirror',
+    'dl.guide.title': 'Installation Guide',
+    'dl.g1.title': 'Pick an install method',
+    'dl.g1.desc': 'With Node available use <code>npm</code>; otherwise grab a prebuilt binary and run <code>tar xzf angles-*.tar.gz</code> to get an executable.',
+    'dl.g2.title': 'Put it on your PATH',
+    'dl.g2.desc': 'Move the binary into <code>~/.local/bin/</code> or <code>/usr/local/bin/</code>, then <code>chmod +x angles</code>.',
+    'dl.g3.title': 'Configure a provider',
+    'dl.g3.desc': 'Run <code>angles config</code> to set your API key and model; config lives in <code>~/.angles/config.json</code>. Or use the interactive <code>angles gateway</code> wizard.',
+    'dl.g4.title': 'Start using it',
+    'dl.g4.desc': '<code>angles chat</code> for interactive chat; <code>angles exec "prompt"</code> to run one instruction non-interactively; <code>angles serve -p 8801</code> for the local HTTP gateway and console.',
+    'dl.history.title': 'Previous versions & checksums',
+    'dl.history.desc': 'Every past release, per-platform artifact and checksum lives on the GitHub Releases page, with CI-generated build notes.',
+    'dl.allreleases': 'Browse all releases', 'dl.npmpage': 'npm package page',
+    'footer.desc': 'A single static binary AI coding agent. Built with Rust, zero runtime dependencies, supporting Linux / macOS / Windows on ARM64 and x64.',
+    'footer.community': 'COMMUNITY', 'footer.contact': 'CONTACT US', 'footer.powered': 'Static site hosted on GitHub Pages'
+  }
+};
+
+// 平台标签页切换
+document.querySelectorAll('.tab').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    var name = tab.getAttribute('data-tab');
+    document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
+    tab.classList.add('active');
+    var panel = document.getElementById('panel-' + name);
+    if (panel) panel.classList.add('active');
+  });
+});
+</script>
+<script src="app.js"></script>
+</body>
+</html>
