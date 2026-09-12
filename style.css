@@ -70,7 +70,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--font-sans);
@@ -78,6 +78,8 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -108,13 +110,15 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 24px;
+  min-width: 0;
 }
 
-.logo { display: flex; align-items: center; gap: 12px; flex: none; }
+.logo { display: flex; align-items: center; gap: 12px; flex: none; min-width: 0; }
 
 .logo-mark {
   width: 32px;
   height: 32px;
+  flex: none;
   border-radius: 8px;
   background: var(--gradient-primary);
   color: #fff;
@@ -144,7 +148,37 @@ a { color: inherit; text-decoration: none; }
 .nav-link:hover { color: var(--color-primary); }
 .nav-icon { font-size: 16px; }
 
-.header-actions { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.header-actions { margin-left: auto; display: flex; align-items: center; gap: 12px; flex: none; }
+
+/* 移动端菜单按钮（桌面隐藏） */
+.menu-btn { display: none; }
+
+/* 移动端下拉菜单 */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  padding: 8px 0 12px;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:active { background: var(--color-bg-secondary); }
 
 .icon-btn {
   width: 36px;
@@ -534,17 +568,29 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 960px) {
   .nav { display: none; }
+  .menu-btn { display: grid; }
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
   .hero-subtitle { max-width: 100%; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .donate-card { grid-template-columns: 1fr; gap: 26px; }
   .qr { margin: 0 auto; }
+  body { overflow-x: hidden; }
 }
 
 @media (max-width: 640px) {
+  .container { padding: 0 18px; }
   .section { padding: 56px 0; }
   .hero { padding: 44px 0; }
   .site-url { display: none; }
+  .site-title { font-size: 17px; }
+  .logo-mark { width: 30px; height: 30px; font-size: 18px; }
+  .nav { gap: 18px; }
   .term-body { font-size: 12px; }
   .repo { flex-wrap: wrap; gap: 8px; }
+  .step { padding: 22px; gap: 14px; }
+  .feature-card { padding: 24px; }
+  .donate-card { padding: 26px; }
+  .qr img { width: 170px; height: 170px; }
+  .hero-version { flex-wrap: wrap; gap: 10px; padding: 8px 16px; font-size: .8rem; }
+  .hero-buttons .btn { flex: 1; justify-content: center; min-width: 130px; }
 }

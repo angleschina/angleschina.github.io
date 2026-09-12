@@ -52,9 +52,19 @@
     <div class="header-actions">
       <button class="icon-btn" id="theme-toggle" aria-label="切换主题">🌙</button>
       <button class="lang-btn" id="lang-btn" aria-label="切换语言">中文</button>
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="菜单" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
+
+<!-- 移动端菜单 -->
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
+  <a href="#download"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+  <a href="https://angleschina.github.io/angles-cli/docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+  <a href="#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
+  <a href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
+</nav>
 
 <main>
 
@@ -277,6 +287,22 @@
 </footer>
 
 <script>
+// ── 移动端菜单 ──
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.textContent = open ? '✕' : '☰';
+  menuBtn.setAttribute('aria-expanded', open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.textContent = '☰';
+    menuBtn.setAttribute('aria-expanded', 'false');
+  });
+});
+
 // ── 年份 ──
 document.getElementById('year').textContent = new Date().getFullYear();
 
