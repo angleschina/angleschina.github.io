@@ -27,6 +27,7 @@
 <meta name="theme-color" content="#0066FF">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230066FF'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23fff' font-family='monospace'%3E%CE%B1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
 </head>
 <body>
 
@@ -43,8 +44,9 @@
 
     <nav class="nav">
       <a class="nav-link" href="#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
-      <a class="nav-link" href="#download"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
-      <a class="nav-link" href="https://angleschina.github.io/angles-cli/docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+      <a class="nav-link" href="download.html"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+      <a class="nav-link" href="docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+      <a class="nav-link" href="about.html"><span class="nav-icon">ℹ️</span><span data-i18n="nav.about">关于</span></a>
       <a class="nav-link" href="#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
       <a class="nav-link" href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
     </nav>
@@ -60,8 +62,9 @@
 <!-- 移动端菜单 -->
 <nav class="mobile-menu" id="mobile-menu">
   <a href="#features"><span class="nav-icon">✨</span><span data-i18n="nav.features">功能</span></a>
-  <a href="#download"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
-  <a href="https://angleschina.github.io/angles-cli/docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+  <a href="download.html"><span class="nav-icon">📥</span><span data-i18n="nav.download">下载</span></a>
+  <a href="docs.html"><span class="nav-icon">📚</span><span data-i18n="nav.docs">文档</span></a>
+  <a href="about.html"><span class="nav-icon">ℹ️</span><span data-i18n="nav.about">关于</span></a>
   <a href="#donate"><span class="nav-icon">❤️</span><span data-i18n="nav.donate">赞助</span></a>
   <a href="https://github.com/angleschina"><span class="nav-icon">🐙</span><span>GitHub</span></a>
 </nav>
@@ -81,8 +84,8 @@
           <span class="date-item"><span class="label" data-i18n="hero.size">体积</span> <span class="version">1.6 MB</span></span>
         </div>
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="#download" data-i18n="hero.cta">立即下载</a>
-          <a class="btn btn-outline" href="https://angleschina.github.io/angles-cli/docs.html" data-i18n="hero.doc">查看文档</a>
+          <a class="btn btn-primary" href="download.html" data-i18n="hero.cta">立即下载</a>
+          <a class="btn btn-outline" href="docs.html" data-i18n="hero.doc">查看文档</a>
         </div>
       </div>
 
@@ -153,44 +156,35 @@
     </div>
   </section>
 
-  <!-- 安装 -->
-  <section class="section alt" id="download">
+  <!-- 深入 -->
+  <section class="section alt" id="explore">
     <div class="container">
       <div class="section-title">
-        <h2 data-i18n="install.title">快速开始</h2>
-        <p data-i18n="install.sub">几分钟就能跑起来</p>
+        <h2 data-i18n="explore.title">深入了解</h2>
+        <p data-i18n="explore.sub">按需前往对应页面</p>
       </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div>
-            <h3 data-i18n="s1.title">安装</h3>
-            <p data-i18n="s1.desc">通过 npm 安装，或直接从 Releases 下载对应平台的压缩包。</p>
-            <p style="margin-top:10px"><code>npm i -g @angleschina/angles</code></p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>
-            <h3 data-i18n="s2.title">配置模型</h3>
-            <p data-i18n="s2.desc">写入 API 密钥与模型名，配置保存在本地 <code>~/.angles/</code>。</p>
-            <p style="margin-top:10px"><code>angles config</code></p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>
-            <h3 data-i18n="s3.title">开始编码</h3>
-            <p data-i18n="s3.desc">交互式对话，或非交互式执行单条指令后退出。</p>
-            <p style="margin-top:10px"><code>angles chat</code></p>
-          </div>
-        </div>
+      <div class="features-grid">
+        <a class="feature-card" href="download.html" style="display:block">
+          <div class="feature-icon">📥</div>
+          <h3 data-i18n="explore.dl.title">下载安装</h3>
+          <p data-i18n="explore.dl.desc">五个平台的预编译二进制、npm 安装方式、包管理器与从源码构建的完整指引。</p>
+        </a>
+        <a class="feature-card" href="docs.html" style="display:block">
+          <div class="feature-icon green">📚</div>
+          <h3 data-i18n="explore.doc.title">使用文档</h3>
+          <p data-i18n="explore.doc.desc">从安装、配置模型到常用命令、内置工具清单，以及联网搜索和本地网关的用法。</p>
+        </a>
+        <a class="feature-card" href="about.html" style="display:block">
+          <div class="feature-icon purple">ℹ️</div>
+          <h3 data-i18n="explore.about.title">关于项目</h3>
+          <p data-i18n="explore.about.desc">为什么把 agent 做成单个静态二进制，本地优先的设计取舍，以及许可证说明。</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 项目 -->
+  <!-- 仓库 -->
   <section class="section" id="projects">
     <div class="container">
       <div class="section-title">
@@ -287,46 +281,17 @@
 </footer>
 
 <script>
-// ── 移动端菜单 ──
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  menuBtn.textContent = open ? '✕' : '☰';
-  menuBtn.setAttribute('aria-expanded', open);
-});
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    menuBtn.textContent = '☰';
-    menuBtn.setAttribute('aria-expanded', 'false');
-  });
-});
-
-// ── 年份 ──
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// ── 主题切换 ──
-const root = document.documentElement;
-const themeBtn = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('angles-theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-setTheme(initialTheme);
-
-function setTheme(t) {
-  root.setAttribute('data-theme', t);
-  themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
-  localStorage.setItem('angles-theme', t);
-}
-themeBtn.addEventListener('click', () => {
-  setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-});
-
-// ── 语言切换 ──
-const I18N = {
+window.ANGLES_I18N = {
   zh: {
     'nav.features': '功能', 'nav.download': '下载', 'nav.docs': '文档', 'nav.donate': '赞助',
+    'nav.about': '关于',
+    'explore.title': '深入了解', 'explore.sub': '按需前往对应页面',
+    'explore.dl.title': '下载安装',
+    'explore.dl.desc': '五个平台的预编译二进制、npm 安装方式、包管理器与从源码构建的完整指引。',
+    'explore.doc.title': '使用文档',
+    'explore.doc.desc': '从安装、配置模型到常用命令、内置工具清单，以及联网搜索和本地网关的用法。',
+    'explore.about.title': '关于项目',
+    'explore.about.desc': '为什么把 agent 做成单个静态二进制，本地优先的设计取舍，以及许可证说明。',
     'hero.subtitle': '单文件静态二进制的 AI 编码 Agent —— 零运行时依赖，多平台预编译，MIT 开源。',
     'hero.version': '最新版本', 'hero.size': '体积',
     'hero.cta': '立即下载', 'hero.doc': '查看文档',
@@ -363,6 +328,14 @@ const I18N = {
   },
   en: {
     'nav.features': 'Features', 'nav.download': 'Download', 'nav.docs': 'Docs', 'nav.donate': 'Donate',
+    'nav.about': 'About',
+    'explore.title': 'Go deeper', 'explore.sub': 'Jump to the page you need',
+    'explore.dl.title': 'Download & install',
+    'explore.dl.desc': 'Prebuilt binaries for five platforms, npm install, package managers, and building from source.',
+    'explore.doc.title': 'Documentation',
+    'explore.doc.desc': 'From install and provider setup to commands, the tool reference, web search and the local gateway.',
+    'explore.about.title': 'About the project',
+    'explore.about.desc': 'Why the agent is one static binary, the local-first trade-offs, and licensing.',
     'hero.subtitle': 'A single static binary AI coding agent — zero runtime dependencies, prebuilt for every platform, MIT licensed.',
     'hero.version': 'Latest', 'hero.size': 'Size',
     'hero.cta': 'Download Now', 'hero.doc': 'Documentation',
@@ -398,44 +371,7 @@ const I18N = {
     'footer.community': 'COMMUNITY', 'footer.contact': 'CONTACT US', 'footer.powered': 'Static site hosted on GitHub Pages'
   }
 };
-
-const langBtn = document.getElementById('lang-btn');
-let lang = localStorage.getItem('angles-lang') || (navigator.language.startsWith('zh') ? 'zh' : 'en');
-applyLang(lang);
-
-function applyLang(l) {
-  const dict = I18N[l];
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key]) el.textContent = dict[key];
-  });
-  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
-  langBtn.textContent = l === 'zh' ? '中文' : 'EN';
-  localStorage.setItem('angles-lang', l);
-}
-langBtn.addEventListener('click', () => {
-  lang = lang === 'zh' ? 'en' : 'zh';
-  applyLang(lang);
-});
-
-// ── 仓库 star 数 ──
-['angles-cli', 'angles-skills', 'awesome-angles', 'angles-desktop'].forEach(r => {
-  fetch('https://api.github.com/repos/angleschina/' + r)
-    .then(x => x.json())
-    .then(j => {
-      const el = document.querySelector('[data-repo="' + r + '"]');
-      if (el && j.stargazers_count != null) el.textContent = j.stargazers_count;
-    })
-    .catch(() => {});
-});
-
-// ── 最新版本号 ──
-fetch('https://api.github.com/repos/angleschina/angles-cli/releases/latest')
-  .then(x => x.json())
-  .then(j => {
-    if (j.tag_name) document.getElementById('ver').textContent = j.tag_name;
-  })
-  .catch(() => {});
 </script>
+<script src="app.js"></script>
 </body>
 </html>
