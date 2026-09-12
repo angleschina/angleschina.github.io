@@ -391,6 +391,33 @@
 
 /* ── 响应式 ───────────────────────────────────────────────────────────── */
 
+/* ── 赞助双码 ─────────────────────────────────────────────────────────── */
+
+.donate-codes {
+  display: flex;
+  gap: 20px;
+  flex: none;
+  align-items: center;
+}
+.donate-codes .qr { padding: 10px; }
+.donate-codes .qr img { width: 170px; height: 170px; }
+.donate-codes .pay-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 8px;
+}
+.donate-codes .pay-badge.alipay { color: #1677FF; }
+.donate-codes .pay-badge.wechat { color: #07C160; }
+
+@media (max-width: 1100px) {
+  .donate-codes { flex-direction: column; gap: 14px; }
+  .donate-codes .qr img { width: 160px; height: 160px; }
+}
+
 @media (max-width: 960px) {
   .doc-layout { grid-template-columns: 1fr; gap: 24px; }
   .doc-toc { position: static; border-left: none; border-top: 1px solid var(--color-border); padding: 18px 0 0; }

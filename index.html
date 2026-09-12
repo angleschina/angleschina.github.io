@@ -229,13 +229,19 @@
         <div>
           <h3 data-i18n="donate.h3">所有代码都公开，免费使用、修改、商用</h3>
           <p data-i18n="donate.p1">如果 Angles 帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。</p>
-          <p><span class="em" data-i18n="donate.em">支付宝</span><span data-i18n="donate.p2">：打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。</span></p>
+          <p><span data-i18n="donate.p2">：支付宝或微信，打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。</span></p>
           <p data-i18n="donate.p3">⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。</p>
         </div>
-        <figure class="qr">
-          <img src="assets/alipay-qr.png" alt="支付宝赞赏码" width="200" height="200">
-          <figcaption data-i18n="donate.qr">打开支付宝扫一扫</figcaption>
-        </figure>
+        <div class="donate-codes">
+          <figure class="qr">
+            <img src="assets/alipay-qr.png" alt="支付宝赞赏码" width="170" height="170">
+            <figcaption class="pay-badge alipay">💙 支付宝</figcaption>
+          </figure>
+          <figure class="qr">
+            <img src="assets/wechat-qr.png" alt="微信赞赏码" width="170" height="170">
+            <figcaption class="pay-badge wechat">💚 微信支付</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -320,7 +326,7 @@ window.ANGLES_I18N = {
     'donate.title': '赞助', 'donate.sub': 'MIT 开源，没有 Pro 墙',
     'donate.h3': '所有代码都公开，免费使用、修改、商用',
     'donate.p1': '如果 Angles 帮你省下了时间，欢迎请我喝杯咖啡 —— 这些钱会变成 CI 构建机、域名、模型 token，和下一个版本的开发时间。',
-    'donate.em': '支付宝', 'donate.p2': '：打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。',
+    'donate.p2': '：支付宝或微信，打开 App → 扫一扫 → 扫码。任意金额，¥1 也是心意。',
     'donate.p3': '⭐ 点个 Star、提一个 Issue、修一个 bug，和捐款一样有价值。',
     'donate.qr': '打开支付宝扫一扫',
     'footer.desc': '单文件静态二进制的 AI 编码 Agent。用 Rust 编译，零运行时依赖，支持 Linux / macOS / Windows 与 ARM64 / x64。',
@@ -364,7 +370,7 @@ window.ANGLES_I18N = {
     'donate.title': 'Donate', 'donate.sub': 'MIT licensed, no pro tier',
     'donate.h3': 'All the code is public — free to use, modify and sell',
     'donate.p1': 'If Angles saved you some time, you can buy me a coffee. It goes straight into CI runners, domains, model tokens and the next release.',
-    'donate.em': 'Alipay', 'donate.p2': ': open the app → Scan → scan the code. Any amount, ¥1 included.',
+    'donate.p2': ': Alipay or WeChat — open the app, tap Scan, and scan the code. Any amount, ¥1 included.',
     'donate.p3': '⭐ A star, an issue report or a bug fix is just as valuable as a donation.',
     'donate.qr': 'Scan with Alipay',
     'footer.desc': 'A single static binary AI coding agent. Built with Rust, zero runtime dependencies, supporting Linux / macOS / Windows on ARM64 and x64.',
