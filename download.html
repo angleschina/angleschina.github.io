@@ -74,33 +74,14 @@
         </div>
       </div>
 
-      <!-- 方式一：npm -->
-      <div class="pm-card">
-        <div class="pm-head">
-          <span style="font-size:24px">📦</span>
-          <h3 data-i18n="dl.npm.title">方式一：通过 npm 安装（推荐）</h3>
-        </div>
-        <p data-i18n="dl.npm.desc">全局安装后一条命令即可完成二进制下载、校验与安装，自动匹配你的平台架构。</p>
-        <div class="code-block"><span class="cm"># 全局安装</span>
-<span class="pr">$</span> <span class="cmd">npm i -g @angleschina/angles</span>
-
-<span class="cm"># 安装对应平台的二进制（自动识别系统与架构）</span>
-<span class="pr">$</span> <span class="cmd">angles install</span>
-<span class="ok">✓</span> installed → ~/.local/bin/angles
-
-<span class="cm"># 验证</span>
-<span class="pr">$</span> <span class="cmd">angles --version</span></div>
-        <p class="pm-note" data-i18n-html="dl.npm.note">npm 包名：<code>@angleschina/angles</code> · 也可用 <code>npx @angleschina/angles</code> 免安装运行。</p>
-      </div>
-
-      <!-- 方式二：直接下载 -->
+      <!-- 方式一：直接下载 -->
       <div class="dl-card">
         <div class="dl-header">
           <span class="dl-badge" data-version>v0.6.3</span>
           <span class="dl-date"><span data-i18n="dl.released">发布日期</span>: <span data-release-date>—</span></span>
           <a class="dl-changelog" href="https://github.com/angleschina/angles-cli/releases" data-i18n="dl.changelog">查看更新日志 →</a>
         </div>
-        <h2 data-i18n="dl.bin.title">方式二：直接下载预编译二进制</h2>
+        <h2 data-i18n="dl.bin.title">方式一：直接下载预编译二进制</h2>
         <p class="dl-req" data-i18n="dl.bin.desc">五个平台的静态二进制，解压即用，无需安装任何运行时。以下为最新版本的全部产物。</p>
 
         <div class="tabs" role="tablist">
@@ -121,7 +102,8 @@
                 <span class="file-size">~1.9 MB</span>
               </div>
               <div class="dl-buttons">
-                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-arm64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl primary" href="dl/angles-linux-arm64.tar.gz" download>💾 <span data-i18n="dl.from.site">从本站下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-arm64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
                 <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-arm64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
               </div>
             </div>
@@ -134,7 +116,8 @@
                 <span class="file-size">~2.0 MB</span>
               </div>
               <div class="dl-buttons">
-                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-x64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl primary" href="dl/angles-linux-x64.tar.gz" download>💾 <span data-i18n="dl.from.site">从本站下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-x64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
                 <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-linux-x64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
               </div>
             </div>
@@ -152,7 +135,8 @@
                 <span class="file-size">~1.9 MB</span>
               </div>
               <div class="dl-buttons">
-                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-arm64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl primary" href="dl/angles-macos-arm64.tar.gz" download>💾 <span data-i18n="dl.from.site">从本站下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-arm64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
                 <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-arm64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
               </div>
             </div>
@@ -165,7 +149,8 @@
                 <span class="file-size">~2.0 MB</span>
               </div>
               <div class="dl-buttons">
-                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-x64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl primary" href="dl/angles-macos-x64.tar.gz" download>💾 <span data-i18n="dl.from.site">从本站下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-x64.tar.gz" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
                 <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-macos-x64.tar.gz" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
               </div>
             </div>
@@ -184,7 +169,8 @@
                 <span class="file-size">~2.1 MB</span>
               </div>
               <div class="dl-buttons">
-                <a class="btn-dl primary" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-windows-x64.zip" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
+                <a class="btn-dl primary" href="dl/angles-windows-x64.zip" download>💾 <span data-i18n="dl.from.site">从本站下载</span></a>
+                <a class="btn-dl" data-latest-tag="https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-windows-x64.zip" href="https://github.com/angleschina/angles-cli/releases/latest">⬇ <span data-i18n="dl.from.github">从 GitHub 下载</span></a>
                 <a class="btn-dl" data-latest-tag="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/download/{tag}/angles-windows-x64.zip" href="https://ghfast.top/https://github.com/angleschina/angles-cli/releases/latest">🚀 <span data-i18n="dl.from.ghfast">从 ghfast 加速下载</span></a>
               </div>
             </div>
@@ -214,6 +200,25 @@
 <span class="pr">$</span> <span class="cmd">make x64</span>          <span class="cm"># Linux x64</span>
 <span class="pr">$</span> <span class="cmd">make macos-arm64</span>  <span class="cm"># macOS ARM64（仅 macOS）</span></div>
         </div>
+      </div>
+
+      <!-- 方式二：npm -->
+      <div class="pm-card">
+        <div class="pm-head">
+          <span style="font-size:24px">📦</span>
+          <h3 data-i18n="dl.npm.title">方式二：通过 npm 安装</h3>
+        </div>
+        <p data-i18n="dl.npm.desc">全局安装后一条命令即可完成二进制下载、校验与安装，自动匹配你的平台架构。</p>
+        <div class="code-block"><span class="cm"># 全局安装</span>
+<span class="pr">$</span> <span class="cmd">npm i -g @angleschina/angles</span>
+
+<span class="cm"># 安装对应平台的二进制（自动识别系统与架构）</span>
+<span class="pr">$</span> <span class="cmd">angles install</span>
+<span class="ok">✓</span> installed → ~/.local/bin/angles
+
+<span class="cm"># 验证</span>
+<span class="pr">$</span> <span class="cmd">angles --version</span></div>
+        <p class="pm-note" data-i18n-html="dl.npm.note">npm 包名：<code>@angleschina/angles</code> · 也可用 <code>npx @angleschina/angles</code> 免安装运行。</p>
       </div>
 
       <!-- 安装指南 -->
@@ -314,12 +319,12 @@ window.ANGLES_I18N = {
     'dl.sub': '获取 Angles Code CLI，开始在你的终端里用 AI 写代码',
     'dl.notice1': '请从官方渠道下载。Angles 只在 GitHub Releases 与 npm 发布，不会通过任何第三方应用商店分发。',
     'dl.notice2': '若从其他来源获取安装包导致的问题，我们无法提供支持。',
-    'dl.npm.title': '方式一：通过 npm 安装（推荐）',
+    'dl.npm.title': '方式二：通过 npm 安装',
     'dl.npm.desc': '全局安装后一条命令即可完成二进制下载、校验与安装，自动匹配你的平台架构。',
     'dl.npm.note': 'npm 包名：<code>@angleschina/angles</code> · 也可用 <code>npx @angleschina/angles</code> 免安装运行。',
     'dl.released': '发布日期', 'dl.changelog': '查看更新日志 →',
-    'dl.bin.title': '方式二：直接下载预编译二进制',
-    'dl.bin.desc': '五个平台的静态二进制，解压即用，无需安装任何运行时。以下为最新版本的全部产物。',
+    'dl.bin.title': '方式一：直接下载预编译二进制',
+    'dl.bin.desc': '五个平台的静态二进制，解压即用，无需安装任何运行时。可直接从本站下载（与 GitHub Release 同版本产物）。',
     'dl.tab.source': '从源码构建',
     'dl.arm.desc': '适用于 ARM64 服务器、树莓派、Apple Silicon 上的 Linux 虚拟机、iOS iSH 环境。',
     'dl.x64.desc': '适用于主流 x86_64 服务器与桌面发行版，musl 静态链接，不挑发行版。',
@@ -330,7 +335,7 @@ window.ANGLES_I18N = {
     'dl.winpm.desc': '已装 Node.js 的话，npm 是更省事的方式。',
     'dl.mac.note': '首次运行若被 Gatekeeper 拦截，执行 <code>xattr -d com.apple.quarantine ./angles</code> 即可放行。',
     'dl.src.desc': '需要 Rust 工具链（stable 即可）。仓库根目录提供 Makefile 与 Cross.toml，可直接交叉编译。',
-    'dl.from.github': '从 GitHub 下载', 'dl.from.ghfast': '从 ghfast 加速下载',
+    'dl.from.github': '从 GitHub 下载', 'dl.from.ghfast': '从 ghfast 加速下载', 'dl.from.site': '从本站下载',
     'dl.guide.title': '安装指南',
     'dl.g1.title': '选择安装方式',
     'dl.g1.desc': '有 Node 环境就用 <code>npm</code>；没有就用预编译二进制，解压后 <code>tar xzf angles-*.tar.gz</code> 得到一个可执行文件。',
@@ -352,12 +357,12 @@ window.ANGLES_I18N = {
     'dl.sub': 'Get Angles Code CLI and start writing code with AI in your terminal',
     'dl.notice1': 'Please download from official channels. Angles is published only on GitHub Releases and npm — never through third-party app stores.',
     'dl.notice2': 'Issues caused by packages from other sources cannot be supported.',
-    'dl.npm.title': 'Option 1: Install via npm (recommended)',
+    'dl.npm.title': 'Option 2: Install via npm',
     'dl.npm.desc': 'One command downloads, verifies and installs the binary matching your platform and architecture.',
     'dl.npm.note': 'Package name: <code>@angleschina/angles</code> · or run without installing via <code>npx @angleschina/angles</code>.',
     'dl.released': 'Released', 'dl.changelog': 'View changelog →',
-    'dl.bin.title': 'Option 2: Download a prebuilt binary',
-    'dl.bin.desc': 'Static binaries for five platforms — unpack and run, no runtime required. All artifacts of the latest release below.',
+    'dl.bin.title': 'Option 1: Download a prebuilt binary',
+    'dl.bin.desc': 'Static binaries for five platforms — unpack and run, no runtime required. Download directly from this site, or from the GitHub release.',
     'dl.tab.source': 'Build from source',
     'dl.arm.desc': 'For ARM64 servers, Raspberry Pi, Linux VMs on Apple Silicon, and iOS iSH environments.',
     'dl.x64.desc': 'For mainstream x86_64 servers and desktop distros; statically linked against musl, distro-agnostic.',
@@ -368,7 +373,7 @@ window.ANGLES_I18N = {
     'dl.winpm.desc': 'If you already have Node.js, npm is the easier route.',
     'dl.mac.note': 'If Gatekeeper blocks the first run, clear the quarantine flag with <code>xattr -d com.apple.quarantine ./angles</code>.',
     'dl.src.desc': 'Requires a Rust toolchain (stable is fine). The repo ships a Makefile and Cross.toml for cross-compilation.',
-    'dl.from.github': 'Download from GitHub', 'dl.from.ghfast': 'Download via ghfast mirror',
+    'dl.from.github': 'Download from GitHub', 'dl.from.ghfast': 'Download via ghfast mirror', 'dl.from.site': 'Download from this site',
     'dl.guide.title': 'Installation Guide',
     'dl.g1.title': 'Pick an install method',
     'dl.g1.desc': 'With Node available use <code>npm</code>; otherwise grab a prebuilt binary and run <code>tar xzf angles-*.tar.gz</code> to get an executable.',
